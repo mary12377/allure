@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
-@Owner("Maria Bulaneva")
+
 
 public class LambdaStepTest {
 
