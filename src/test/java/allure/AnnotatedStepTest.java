@@ -1,25 +1,25 @@
 package allure;
 
-import io.qameta.allure.Allure;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
 public class AnnotatedStepTest {
 
-    private static final String REPOSITORY = "Maria Bulaneva/demoqa_tests_12";
-    private static final int ISSUE_NUMBER = 1;
+    private static final String REPOSITORY = "eroshenkoam/allure-example";
+    private static final int ISSUE_NUMBER = 68;
 
     @Test
     @DisplayName("Успешный тест с аннотацией @Step")
     public void testGithubIssue() {
-        Allure.parameter("Name", "Maria Bulaneva");
-        //SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
 
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
-        steps.ClickOnRepositoryLink(REPOSITORY);
+        steps.сlickOnRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
         steps.shouldSeeIssueWithNumber(ISSUE_NUMBER);
     }

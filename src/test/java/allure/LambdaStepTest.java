@@ -20,34 +20,28 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class LambdaStepTest {
 
-
-    private static final String REPOSITORY = "Maria Bulaneva/demoqa_tests_12";
-    private static final int ISSUE_NUMBER = 1;
+    private static final String REPOSITORY = "eroshenkoam/allure-example";
+    private static final int ISSUE_NUMBER = 68;
 
     @Test
     public void testGitHubIssue() {
         SelenideLogger.addListener("allure0", new AllureSelenide());
-
         step("Открываем главную страницу", () -> {
             open("https://github.com");
         });
-
         step("Ищем репозиторий" + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").sendKeys(REPOSITORY);
             $(".header-search-input").submit();
         });
-
         step("Переходим по ссылке репозитория" + REPOSITORY, () -> {
             $(linkText(REPOSITORY)).click();
         });
-
         step("Кликаем на таб Issues", () -> {
             $(partialLinkText("Issues")).click();
         });
-
         step("Проверяем, что существует Issue с номером " + ISSUE_NUMBER, () -> {
-            $(withText("#1")).should(Condition.visible);
+            $(withText("#76")).should(Condition.visible);
             Allure.getLifecycle().addAttachment(
                     "Исходники страницы",
                     "text/html",

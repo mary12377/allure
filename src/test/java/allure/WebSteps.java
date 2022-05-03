@@ -15,24 +15,25 @@ import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
 public class WebSteps {
-    //("Открываем главную страницу")
+
+    @Step("Открываем главную страницу")
     public void openMainPage() {
         open("https://github.com");
     }
 
-    //("Ищем репозиторий {repo}")
+    @Step("Ищем репозиторий {repo}")
     public void searchForRepository(String repo) {
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(repo);
         $(".header-search-input").submit();
     }
 
-    //("Переходим по ссылке репозитория {repo}")
-    public void ClickOnRepositoryLink(String repo) {
+    @Step("Переходим по ссылке репозитория {repo}")
+    public void сlickOnRepositoryLink(String repo) {
         $(linkText(repo)).click();
     }
 
-    //("Кликаем на таб Issues")
+    @Step("Кликаем на таб Issues")
     public void openIssuesTab() {
         $(partialLinkText("Issues")).click();
     }

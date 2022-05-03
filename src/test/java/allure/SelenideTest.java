@@ -23,12 +23,12 @@ public class SelenideTest {
         open("https://github.com");
 
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys("Maria Bulaneva/demoqa_tests_12");
+        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
         $(".header-search-input").submit();
 
-        $(linkText("Maria Bulaneva/demoqa_tests_12")).click();
+        $(linkText("eroshenkoam/allure-example")).click();
         $(partialLinkText("Issues")).click();
-        $(withText("#1")).click();
+        $(withText("#76")).click();
     }
 
     @AfterEach
