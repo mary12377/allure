@@ -19,7 +19,7 @@ public class AnnotatedStepTest {
 
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
-        steps.clickOnRepositoryLink();
+        steps.ClickOnRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
         steps.shouldSeeIssueWithNumber(ISSUE_NUMBER);
     }
