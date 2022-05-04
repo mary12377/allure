@@ -38,7 +38,7 @@ public class WebSteps {
         $(partialLinkText("Issues")).click();
     }
 
-   @Step //("Проверяем, что существует Issue с номером {number}")
+   @Step ("Проверяем, что существует Issue с номером {number}")
     public void shouldSeeIssueWithNumber(int number) {
         $(withText("#" + number)).should(Condition.visible);
         attachSreenshot();
